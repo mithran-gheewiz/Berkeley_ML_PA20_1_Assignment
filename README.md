@@ -96,4 +96,19 @@ I make sense to limit only the first few components at the elbow before the curv
 
 From Fig. 6, With ~300 components, the cumulative explained variance reaches only ~0.77 (77%).
 This means that even after keeping the first 300 PCs, the model does not capture 95% of the variance (EVR >= 95%)
+
+### Modeling 
+I use the following baseline models in the analysis: 
+- Logistic regression model - L1 regularization
+- Decision tree model (Tree depth (n=5))
+- Hyper parameter tuning for both logistic regression and decision tree
+
+When I first started out, the baseline model did not converge. Then, I performed dimensionality reduction before the classifier (often best for OHE-heavy data) and reran the program and its still running after 12 hours without completing the kernal. 
+I determined that the bottlenecks are: (1) refitting OHE+SVD inside every CV fold, (2) too many candidates/folds, and (3) using a heavy solver on high-dim data.
+To make it run faster, I did the following:
+Tune on a stratified subset (30k rows), then refit best params on the full 100k.
+Use HalvingRandomSearchCV (successive halving) with 3-fold CV.
+Shrink SVD to ~50 comps and n_iter=2.
+Use L1 + liblinear (binary) after SVD (way faster than saga here).
+For the tree, compress the categorical branch with OHE → SVD inside the ColumnTransformer (dramatically fewer features).  
                                       
