@@ -71,12 +71,16 @@ All-NaN numeric columns are dropped before fitting to avoid SimpleImputer errors
 Categorical imputation uses a constant label ("MISSING") so all-missing columns still produce a single OHE column (rather than erroring).
 By setting handle_unknown='ignore' allows the test set have unseen categories without crashing.
 Two preprocessors (Standard vs Min-Max) are trained independently to compare downstream model performance easily.
+I fit on train, apply to test: both imputers, scalers, and the OHE learn from train only, preventing leakage.
   
 The transformed matrices are shown below: 
 X_train_std: shape=(99922, 4908), sparse=False, density=n/a
 X_test_std : shape=(30001, 4908), sparse=False, density=n/a
 X_train_mm : shape=(99922, 4908), sparse=False, density=n/a
 X_test_mm  : shape=(30001, 4908), sparse=False, density=n/a
+
+### Feature Selection 
+I used principal component analysis (PCA) to identify features that are important for the model
 
 
                                       
