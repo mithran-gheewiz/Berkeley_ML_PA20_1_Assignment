@@ -53,4 +53,10 @@ I also made some density plots on the individual features. An example is shown b
 
                                       Fig. 3. Density plot L1_S25_F2623
 
+Because the data are is so sparse with many missing values, I obtained many figures that shows completely missing values for a particular station.
 
+For the corelation matrix, the heatmap shows strong correlation between some features in Line1 Station 24 for features 766, 780, 785 and 775 for the high variance. In the top 25, there are high negative correlation for F2906 and F2925 all from Line1 and Station 25 suggesting some inverse correlation.
+
+<img width="901" height="788" alt="image" src="https://github.com/user-attachments/assets/fababf2e-20d2-4047-8aee-c9a21e098809" />
+
+                                      Fig. 4. Correlation heat map for the top 25 high variance numeric features
