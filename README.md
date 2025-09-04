@@ -60,3 +60,23 @@ For the corelation matrix, the heatmap shows strong correlation between some fea
 <img width="901" height="788" alt="image" src="https://github.com/user-attachments/assets/fababf2e-20d2-4047-8aee-c9a21e098809" />
 
                                       Fig. 4. Correlation heat map for the top 25 high variance numeric features
+
+
+### Preprocessing
+For preprocessing, I used the following methodology:
+- Categorical to numerical for both the test and train data: One hot encoder (OHE)
+- Numerical data: imputation, standard scaling (since the data sets are separate don't have to worry to do it after the test train split. Can perform the standard scaling on each test and train data set)
+- Compare against minimum – maximum scaling
+All-NaN numeric columns are dropped before fitting to avoid SimpleImputer errors.
+Categorical imputation uses a constant label ("MISSING") so all-missing columns still produce a single OHE column (rather than erroring).
+By setting handle_unknown='ignore' allows the test set have unseen categories without crashing.
+Two preprocessors (Standard vs Min-Max) are trained independently to compare downstream model performance easily.
+  
+The transformed matrices are shown below: 
+X_train_std: shape=(99922, 4908), sparse=False, density=n/a
+X_test_std : shape=(30001, 4908), sparse=False, density=n/a
+X_train_mm : shape=(99922, 4908), sparse=False, density=n/a
+X_test_mm  : shape=(30001, 4908), sparse=False, density=n/a
+
+
+                                      
