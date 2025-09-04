@@ -31,13 +31,15 @@ For EDA, I focused on the following items:
 
 Based on the tables, I noticed that certain stations had a higher frequency of parts passing through that station. For example, station L0_S2_F33 (L0_S2_F33 means the Feature 33 measured at Station 2 on Assembly Line 0) has a frequency of 25. There are many stations, where parts did not pass through at all and this is tabulated with missing_pct at 1.0 (100% missing). These will be dropped before fitting for the logistic regression.
 
-Table 1. Count and Frequency at different stations
+                      Table 1. Count and Frequency at different stations
+                      
 <img width="343" height="429" alt="image" src="https://github.com/user-attachments/assets/1eae27b8-3223-495c-8ba3-0e1398b0ce6f" />
 
-
-
-
 Univariate analysis – numeric (histograms & density/KDE). I picked a manageable subset to visualize (top 12 by variance or a manual list).
+
+<img width="1253" height="685" alt="image" src="https://github.com/user-attachments/assets/ddf168a5-cbcf-4e9b-868b-41a50a8bd16f" />
+
+Fig.1 Histogram L3_S29_F3470
 
 
 
