@@ -131,4 +131,4 @@ For the decision tree model, by moving the threshold up to 0.9, the tree becomes
 
 
 ### Business Impact
-                                      
+From a business impact, both these models will not be able to predict very well whether the part is of high quality on not. The data set is very complex, highly imbalanced and requires more advanced ensemble techniques such as XGBoost or Random Forest. These more powerful algorithm will hopefully be able to provide better results and predictive capabilities. The ensemble technique XGBoost will be further investigated in the final version of the capstone project.                                      
