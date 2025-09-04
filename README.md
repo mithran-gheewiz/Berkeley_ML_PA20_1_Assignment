@@ -39,7 +39,18 @@ Univariate analysis – numeric (histograms & density/KDE). I picked a manageabl
 
 <img width="1253" height="685" alt="image" src="https://github.com/user-attachments/assets/ddf168a5-cbcf-4e9b-868b-41a50a8bd16f" />
 
-Fig.1 Histogram L3_S29_F3470
+                                      Fig.1 Histogram L3_S29_F3470 (one example)
 
+The figure above shows the only two different numeric features are measured at that station. There are examples of multiple measurements being made at a particular station which is shown in Figure 2 below.
+
+<img width="1247" height="688" alt="image" src="https://github.com/user-attachments/assets/9b1611b4-e079-4185-a909-f801cefbee4c" />
+
+                                      Fig.2 Histogram L0_S7_F138 (one example)
+
+I also made some density plots on the individual features. An example is shown below in figure 3. 
+
+<img width="1272" height="720" alt="image" src="https://github.com/user-attachments/assets/a94d1983-d3fb-4544-8115-f3b4a54c7cd6" />
+
+                                      Fig. 3. Density plot L1_S25_F2623
 
 
