@@ -1,6 +1,6 @@
 # Berkeley_ML_PA20_1_Assignment
 
-## Link to Jupyter Notebook: 
+## Link to Jupyter Notebook: https://github.com/mithran-gheewiz/Berkeley_ML_PA20_1_Assignment/blob/main/Capstone_Project_Bosch_Production_Line_ver03.ipynb
 
 ### Data Checks
 The data set is from the Bosch Kaggle competition. The data is sourced from Kaggle. https://www.kaggle.com/competitions/bosch-production-line-performance/overview
