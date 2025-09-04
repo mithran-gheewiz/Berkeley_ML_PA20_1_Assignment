@@ -82,5 +82,18 @@ X_test_mm  : shape=(30001, 4908), sparse=False, density=n/a
 ### Feature Selection 
 I used principal component analysis (PCA) to identify features that are important for the model
 
+<img width="943" height="429" alt="image" src="https://github.com/user-attachments/assets/2d2d06bc-cea3-45d2-aa93-a4c5cb4ff313" />
 
+                                    Fig. 5. Scree: EVR per Component 
+
+The first few components explain the most variance (PC1 ≈ 0.03 = 3%).
+After ~10–20 components, the curve flattens out, meaning later components each explain very little variance (<0.5% each).
+I make sense to limit only the first few components at the elbow before the curve flattens out.  
+
+<img width="937" height="430" alt="image" src="https://github.com/user-attachments/assets/338f9280-d8cf-44a9-b0dd-4eee23936e16" />
+
+                                    Fig. 6. Cumulative Explained Variance 
+
+From Fig. 6, With ~300 components, the cumulative explained variance reaches only ~0.77 (77%).
+This means that even after keeping the first 300 PCs, the model does not capture 95% of the variance (EVR >= 95%)
                                       
