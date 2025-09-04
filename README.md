@@ -111,4 +111,24 @@ Use HalvingRandomSearchCV (successive halving) with 3-fold CV.
 Shrink SVD to ~50 comps and n_iter=2.
 Use L1 + liblinear (binary) after SVD (way faster than saga here).
 For the tree, compress the categorical branch with OHE → SVD inside the ColumnTransformer (dramatically fewer features).  
+
+### Evaluation
+For the evaluation, I performed the following calculations: 
+- F1 Score
+- Precision
+- RMSE
+
+Table 2 shows the results of the decision tree and the logistic regression using the best F1th and the baseline.
+
+                                      Table 2 Model Evaluation 
+<img width="641" height="179" alt="image" src="https://github.com/user-attachments/assets/2e50e185-af18-473e-8d7e-cff8e8bede0e" />
+
+Logistic L1 is a completely ineffective model here. It collapses to predicting only the majority class. Low RMSE (0.0756) but useless in terms of classification metrics (especially recall/F1).
+The model is predicting all negatives (never predicts “1”). Since there are true positives in the data (115 positives), this means it completely missed them. Hence Recall = 0 and Precision = 0.
+Therefore, the logistic regression L1 cannot be used to make any predictions.
+
+For the decision tree model, by moving the threshold up to 0.9, the tree becomes more conservative (predicts fewer positives). This improves precision slightly but sacrifices recall. F1 is still very poor (0.09), but it beats the other setups.
+
+
+### Business Impact
                                       
